@@ -1,0 +1,1 @@
+To adjust the paralellism for the Queensgate CS100 etalon, use sdi_cs100_etalon_driver_gui
