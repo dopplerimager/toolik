@@ -1,0 +1,51 @@
+#This is a comment line, and should be ignored
+
+# %% is read as a steps per order control line
+# && is read as a phasemap control line
+# they are only executed if either of them needs refreshing,
+# as determined by the console
+
+# Commands and args are:
+# spectrum: [lambda, zone settings file, file name format]
+# stepsperorder: [lambda, start volt offset, stop volt offset, step size, number of scans]
+# phasemapper: [lambda]
+# shutterclose: [dummy]
+# shutdownspex: [dummy]
+# cameraset: [exposure time, gain]
+# runscript: [name of idl pro file to run, no extension needed]
+# mirror: [home_sky | home_cal | drive_sky | drive_cal]
+# cal_switch: [calibration source number]
+
+	cameraset: [0.02, 1]
+
+%% stepsperorder: [632.8, 560, 730, 5, 20]
+&& phasemapper: [1, 1, 632.8, 632.8]
+
+
+
+ifsea: [-100, 100] [cont]
+
+	cameraset: [0.05, 1]	
+
+	spectrum: [632.8, default_zones.txt, `Y$_doy$_DriftTest_Laser6328_Red_Cal_Date_0n$_0d$.pf`]		
+	wait: [120]
+	spectrum: [632.8, default_zones.txt, `Y$_doy$_DriftTest_Laser6328_Red_Cal_Date_0n$_0d$.pf`]		
+	wait: [120]
+	spectrum: [632.8, default_zones.txt, `Y$_doy$_DriftTest_Laser6328_Red_Cal_Date_0n$_0d$.pf`]		
+	wait: [120]
+	spectrum: [632.8, default_zones.txt, `Y$_doy$_DriftTest_Laser6328_Red_Cal_Date_0n$_0d$.pf`]		
+	wait: [120]
+	spectrum: [632.8, default_zones.txt, `Y$_doy$_DriftTest_Laser6328_Red_Cal_Date_0n$_0d$.pf`]		
+	wait: [120]
+	spectrum: [632.8, default_zones.txt, `Y$_doy$_DriftTest_Laser6328_Red_Cal_Date_0n$_0d$.pf`]		
+	wait: [120]
+	spectrum: [632.8, default_zones.txt, `Y$_doy$_DriftTest_Laser6328_Red_Cal_Date_0n$_0d$.pf`]		
+	wait: [120]
+	spectrum: [632.8, default_zones.txt, `Y$_doy$_DriftTest_Laser6328_Red_Cal_Date_0n$_0d$.pf`]		
+	wait: [120]
+	
+ifsea: [-100, 100] [loop]
+
+
+
+
