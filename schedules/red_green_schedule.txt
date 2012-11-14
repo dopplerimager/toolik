@@ -1,5 +1,39 @@
+
+%% stepsperorder: [632.8, 600, 650, 2, 30, 1, .05]
+&& phasemapper: [1, 1, 632.8, 632.8, 1, 0.05, 3]
+
+mirror: [home_sky]
+mirror: [home_cal]
+
+# Phase map taken at start and end of each night:
+ifsea: [-5, -4.7] [cont]
+
+        cameraset: [0.1, 5]
+        mirror: [drive_cal] 
+        phasemapper: [1, 1, 632.8, 632.8, 1, 0.1, 5]
+
+ifsea: [-5, -4.7] [loop]
+
+
 # Main Red-Green loop:
 ifsea: [-100, -7] [cont]
+
+	# 2012 HAARP Campaign Gravity Wave Exp.
+#	filter: [1]  
+#	ifut: [0, 5] [begin]
+#
+#           cameraset: [0.1, 5]    
+#           mirror: [drive_cal]
+#           spectrum: [632.8, default_zones.txt, `Y$_doy$_Date_0n$_0d$_CAL_6328_NZ0115.nc`]         
+#
+#           mirror: [drive_sky]
+#           cameraset: [0.1, 500]   
+#           spectrum: [630.0, default_zones.txt, `Y$_doy$_Date_0n$_0d$_SKY_6300_NZ0115.nc`]
+#           spectrum: [630.0, default_zones.txt, `Y$_doy$_Date_0n$_0d$_SKY_6300_NZ0115.nc`]
+#           spectrum: [630.0, default_zones.txt, `Y$_doy$_Date_0n$_0d$_SKY_6300_NZ0115.nc`]
+#
+#	ifut: [0, 5] [end]
+
 
 	cameraset: [0.1, 5]	
 
@@ -24,7 +58,6 @@ ifsea: [-100, -7] [cont]
 	cameraset: [.05, 2]
 
 ifsea: [-100, -7] [loop]
-
 
 
 ifsea: [-5, 120] [cont]
