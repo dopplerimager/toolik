@@ -12,6 +12,11 @@ pro Toolik_Data_Move
 	move_to = 'c:\users\sdi3000\data\awaiting_transfer\'
 	files = file_search('c:\users\sdi3000\data\*.nc', count = nfiles)
 
+	if nfiles eq 0 then begin
+		last_run_time = systime(/sec)
+		return
+	endif
+
 	fnames = file_basename(files)
 	fdirs = file_dirname(files)
 
