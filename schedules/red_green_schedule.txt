@@ -2,17 +2,19 @@
 %% stepsperorder: [632.8, 600, 650, 2, 30, 1, .05]
 && phasemapper: [1, 1, 632.8, 632.8, 1, 0.05, 3]
 
+set_status: [`Home Motors`]
 mirror: [home_sky]
 mirror: [home_cal]
 
 # Phase map taken at start and end of each night:
-ifsea: [-5, -4.7] [cont]
+ifsea: [-7, -6] [cont]
 
         cameraset: [0.1, 5]
         mirror: [drive_cal] 
+	set_status: [`Acquire Phasemap`]
         phasemapper: [1, 1, 632.8, 632.8, 1, 0.1, 5]
 
-ifsea: [-5, -4.7] [loop]
+ifsea: [-7, -6] [loop]
 
 
 # Main Red-Green loop:
@@ -34,6 +36,7 @@ ifsea: [-100, -7] [cont]
 #
 #	ifut: [0, 5] [end]
 
+	set_status: [`Obs: Red & Green`]
 
 	cameraset: [0.1, 5]	
 
@@ -60,8 +63,9 @@ ifsea: [-100, -7] [cont]
 ifsea: [-100, -7] [loop]
 
 
-ifsea: [-5, 120] [cont]
+ifsea: [-6, 120] [cont]
 	shutterclose: [1]
 	shutdownspex: [1]
 	runscript: [toolik_data_move]
-ifsea: [-5, 120] [loop]
+	set_status: [`Idle`]
+ifsea: [-6, 120] [loop]

@@ -268,6 +268,9 @@ pro toolik_initialise, misc, console
 												dll:dll, $
 												comms:'moxa'}, out, err
 		console->log, 'CS100 Etalon Init: ' + out, 'InstrumentSpecific', /display
+		sdi_cs100_etalon_driver, 'set_balance_mode', {port:misc.port_map.etalon.number, $
+												dll:dll, $
+												comms:'moxa'}
 		sdi_cs100_etalon_driver, 'set_operate_mode', {port:misc.port_map.etalon.number, $
 												dll:dll, $
 												comms:'moxa'}
