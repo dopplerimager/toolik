@@ -10,7 +10,7 @@ common data_xfer_semaphore, xfer_tstamp
 
 	command_string = 'idlde -e "data_transfer, ' + "data_dir = 'c:\users\sdi3000\data\awaiting_transfer\', " + $
 				   		"sent_dir = 'c:\users\sdi3000\data\sent\', " + $
-				   		"ftp_command = 'psftp 137.229.27.190 -l toolik -pw aer0n0my', " + $
+				   		"ftp_command = 'toolik:aer0n0my@137.229.27.190', " + $
 	 			   		"site = 'TLK'" + '"'
 
 	spawn, command_string, /nowait
